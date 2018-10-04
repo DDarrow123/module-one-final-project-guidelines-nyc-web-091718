@@ -2,14 +2,13 @@ require_relative '../config/environment'
 require 'pry'
 
 
-user = welcome
+user = Comm.welcome
+
+comm = Comm.new(user)
 
 keep_searching = true
 
 while keep_searching do
-  get_initial_user_input
-  keep_searching = try_again
+  keep_searching = comm.get_initial_user_input
 end
-wine = review
-create_review(user, wine)
-say_bye
+comm.say_bye
