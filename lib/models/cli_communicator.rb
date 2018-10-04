@@ -65,7 +65,7 @@ class Comm
     end
 
     if user_choice == 'review'
-       wine = review 
+       wine = review
        if wine
          return create_review(wine)
        end
@@ -105,9 +105,15 @@ class Comm
       puts potential_matches[0]['name']
       puts potential_matches[0]['year']
       yes_no = gets.chomp
-      if yes_no == 'yes'
-        potential_matches[0]
+        if yes_no == 'yes'
+          potential_matches[0]
+        elsif yes_no == 'no'
+          puts "Sorry we don't have the wine you're looking for. Let's head back to the main menu"
+          
       end
+
+
+
     elsif potential_matches.length > 1
       puts "Which of these wines do you wish to review? (Enter number)"
       potential_matches.each_with_index do |wine, i|
